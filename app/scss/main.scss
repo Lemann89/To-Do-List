@@ -1,0 +1,316 @@
+@import "fonts" ;
+@import "icons" ;
+@import "libs" ;
+@import "base" ;
+@import "vars" ;
+@import "loader" ;
+
+// Пользовательские стили
+body {
+    background: linear-gradient(270deg, #16C4EA 0%, #007BFF 100%), #FFFFFF;
+}
+.title {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+}
+.main-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    max-width: 700;
+    padding: 0px 35px;
+}
+.active {
+    display: block;
+}
+.wrap {
+    width: 783px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: $lite-gray;
+    border-radius: 25px;
+    &__header{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        &-item {
+            padding: 24px 0px;
+            font-weight: bold;
+            font-size: 32px;
+            background: transparent;
+            cursor: pointer;
+            border:none;
+            width: 50%;
+            &:first-child {
+                border-right: 2px solid $black;
+            }
+            &-add {
+                &--active {
+                    background-color: $green;
+                    color: $white;
+                    border-top-left-radius: 25px;
+                } 
+            }
+            &-search {
+                &--active {
+                    background-color: $green;
+                    color: $white;
+                    border-top-right-radius: 25px;
+                } 
+            }
+        }
+        &-border {
+            border-bottom: 2px solid $black;
+        } 
+    }
+    &__add {
+        position: relative;
+        &-title {
+            margin-top: 25px;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 28px;
+        }
+        &-input {
+            margin-top: 15px;
+            width: 100%;
+            border: 1px solid $black;
+            box-sizing: border-box;
+            border-radius: 20px;
+            height: 40px;
+            padding: 5px 15px;
+        }
+        &-btns {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 0px;  
+        }
+        &-line{
+            width: 100%;
+            height: 2px;
+            background-color: black;
+        }
+        &-btn {
+            padding: 10px 140px;
+            color: $white;
+            border: none;
+            font-size: 24px;
+            box-sizing: border-box;
+            border-radius: 20px;
+            transition: all 0.3s linear;
+            background-color: $white;
+            &--add {
+                border: 1px solid $green;
+                color:$green;
+                &:hover {
+                    background-color: $green;
+                    color: $white;
+                }
+            }
+            &--close {
+                border: 1px solid $red;
+                color:$red;
+                &:hover {
+                    background-color: $red;
+                    color: $white;
+                }
+            }
+        }
+        &-cancel {
+            height: 16px;
+            width: 16px;
+            position: absolute;
+            right: 12px;
+            top: 55px;
+            cursor: pointer;
+        }
+    }
+    &__search {
+        position: relative;
+    }
+    &__content {
+        &-show {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+    }
+    &__btn {
+        border: none;
+        box-sizing: border-box;
+        border-radius: 15px;
+        height: 40px;
+        width: 145px;
+        font-weight: normal;
+        font-size: 24px;
+        color: $white;
+        transition: all 0.3s linear;
+        background-color:$white;
+        &-action {
+            border: none;
+            box-sizing: border-box;
+            border-radius: 15px;
+            height: 40px;
+            width: 145px;
+            font-weight: normal;
+            font-size: 24px;
+            color: $white;
+            transition: all 0.3s linear;
+            background-color:$white;
+        }
+        &--primary {
+            border: 1px solid $blue;
+            color:$blue;
+            &:hover {
+                background-color: $blue;
+                color: $white;
+            }
+        }
+        &--secondary {
+            border: 1px solid $gray;
+            color:$gray;
+            &:hover {
+                background-color: $gray;
+                color: $white;
+            }
+        }
+        &--success {
+            border: 1px solid $green;
+            color:$green;
+            &:hover {
+                background-color: $green;
+                color: $white;
+            }
+        }
+        &--danger {
+            border: 1px solid $red;
+            color:$red;
+            &:hover {
+                background-color: $red;
+                color: $white;
+            }
+        }
+        &--disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        &--show {
+            border-radius: 30px;
+            height: 50px;
+            width: 170px;
+        }
+        // &-actions {
+            
+        // }
+        &-sort {
+            margin-left: 35px;
+        }
+        &--edit {
+            margin-left: 20px;
+        }
+    }
+    &__actions {
+        &-list {
+            margin-top: -12px;
+            text-align: center;
+            background-color: $white;
+            border:1px solid $blue;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            transition:all 0.5s ease-in-out;
+            &--sort {
+                margin-left: 35px;
+            }
+        }
+        &-item {
+            cursor: pointer;
+            color: $blue;
+            padding: 10px 0px;
+            font-size: 22px;
+            font-weight: normal;
+            &:first-child{
+                padding-top: 22px;
+            }
+            &:hover {
+                background-color: $blue;
+                color:white;
+                &:last-child{
+                    border-bottom-left-radius: 14px;
+                    border-bottom-right-radius: 14px;
+                }
+            }
+        }
+    }
+    &__action {
+        display: flex;
+        padding:33px 0px;
+    }
+    &__task {
+        background-color: $white;
+        width: 100%;
+        border-radius: 15px;
+        padding: 25px;
+        margin-bottom: 25px;
+        border: 1px solid $black;
+        &-suptitle {
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 23px;
+            opacity: 0.7;
+        }
+        &-text {
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 28px;
+            margin: 10px 0px;
+        }
+        &-btn {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0px;
+            &--edit {
+                padding: 10px 0px;
+            }
+        }
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-items: center;
+            &--edit {
+                margin-bottom: 0px;
+                align-items: flex-end;
+            }
+        }
+        &-main {
+            margin-top: 10px;
+            width: 100%;
+            overflow-wrap: break-word;
+        }
+        &-status {
+            padding: 0px 25px;
+            background-color: $light-blue;
+            border-radius: 15px;
+            &-text {
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $white;
+            }
+            &--success {
+                background-color: $green;
+            }
+            &--secondary {
+                background-color: $gray;
+            }
+        }
+    }
+}
+.hidden { 
+    display: none;
+}
+@import "media" ; // Всегда в конце
